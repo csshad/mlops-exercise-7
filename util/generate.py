@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 import random
 from faker import Faker
@@ -21,4 +22,5 @@ data = {
 df = pd.DataFrame(data)
 
 # Save to CSV
+os.makedirs('data', exist_ok=True)
 df.to_csv('data/credit_card_records.csv', index=False)

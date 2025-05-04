@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 import joblib
 from sklearn.model_selection import train_test_split
@@ -54,6 +55,7 @@ def main():
     model = train_model(X_train, y_train)
 
     # Save the model
+    os.makedirs('models', exist_ok=True)
     save_model(model, 'models/model.pkl')
 
     # Test the model

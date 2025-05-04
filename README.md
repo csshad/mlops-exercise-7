@@ -259,3 +259,52 @@ You've learned how to compare the performance of the model with the previous ver
 ## Hand in
 
 Send a link to your repository on GitHub to your teacher.
+
+---
+
+# Dev container
+## First time
+- install Dev Containers vscode extension
+- `ctrl+shift+p`
+- Rebuild and Reopen in Container
+- Pick python 3 Container
+- Select uv package manager for installation
+- Go with default values
+The container will be built and run
+
+## After that 
+- Just Reopen in Container (don't Rebuild)
+
+---
+
+## Inside the Container
+uv docs (https://docs.astral.sh/uv/)
+
+- uv init, will create
+  - .python-version
+  - pyproject.toml
+  - main.py -> you can delete it
+
+Next, install dependencies (we have a requirements.txt)
+- uv add -r requirements.txt
+an new file `uv.lock` will be created
+
+After that, anyone cloning the repo can use `uv install` to install the dependencies listed in the toml file
+No need to work `requirements.txt` again
+
+To add or remove any dependency
+- uv add <dependency>
+- uv remove <dependency>
+
+To run any script inside the uv created virtual env
+- uv run <module>.py
+
+There are integrations between uv and other tools, like pytest, ruff, ...
+You can run these via (to make them run inside uv virtual env):
+- uv run test
+- uv run ruff
+- ...
+
+run pytest with coverage
+- first install pytest-cov `uv add pytest-cov`
+- run `uv run pytest --cov=tests/test_app.py --cov-report=html`

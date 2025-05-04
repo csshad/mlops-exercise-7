@@ -1,0 +1,18 @@
+[project]
+name = "oxford-mlops-exercise"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "faker>=37.1.0",
+    "joblib>=1.5.0",
+    "pandas>=2.2.3",
+    "pytest>=8.3.5",
+    "pytest-cov>=6.1.1",
+    "scikit-learn>=1.6.1",
+]
+
+# This tells Python to treat the current directory (project root) as the module search path, so import app works from inside tests/
+[tool.pytest.ini_options]
+pythonpath = ["."]
