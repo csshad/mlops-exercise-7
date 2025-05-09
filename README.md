@@ -307,4 +307,4 @@ You can run these via (to make them run inside uv virtual env):
 
 run pytest with coverage
 - first install pytest-cov `uv add pytest-cov`
-- run `uv run pytest --cov=tests/test_app.py --cov-report=html`
+- run `uv run pytest --cov=tests/test_app.py --cov-report=html` 
